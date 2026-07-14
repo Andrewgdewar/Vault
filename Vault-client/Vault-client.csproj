@@ -4,6 +4,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>VaultOwnerFilter</RootNamespace>
     <AssemblyName>Vault-client</AssemblyName>
+    <Version>0.1.1</Version>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <OutputPath>bin\$(Configuration)\</OutputPath>
