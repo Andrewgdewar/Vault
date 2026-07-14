@@ -45,7 +45,7 @@ When another player purchases one of your offers, that slot becomes available im
 
 ## Install
 
-1. Download `Vault-v0.1.0.zip` from GitHub Releases.
+1. Download `Vault-v0.1.1.zip` from GitHub Releases.
 2. Open the zip and drag `BepInEx` and `SPT` into the root of the SPT game installation.
 3. Start the SPT server and client normally.
 
@@ -83,7 +83,7 @@ Requirements:
 - An SPT 4.0.13 installation
 
 ```powershell
-.\build-release.ps1 -TarkovDir "C:\SPT" -Version "0.1.0"
+.\build-release.ps1 -TarkovDir "C:\SPT" -Version "0.1.1"
 ```
 
 The direct-drop zip and checksum are written to `artifacts/`.
