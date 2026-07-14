@@ -1,8 +1,10 @@
-# Vault v0.1.0
+# Vault v0.1.1
 
-Initial release for SPT 4.0.13.
+Patch release for SPT 4.0.13.
 
-Download `artifacts/Vault-v0.1.0.zip`, open it, and drag the included `BepInEx` and `SPT` folders into the root of an SPT installation.
+Vault now advertises 10% of normal trader sale value so automatic best-price selling mods do not select it by default. Vault deposits still pay exactly 1 rouble per root item, and retrieval still costs 1 rouble.
+
+Download `artifacts/Vault-v0.1.1.zip`, open it, and drag the included `BepInEx` and `SPT` folders into the root of an SPT installation.
 
 Runtime layout:
 
