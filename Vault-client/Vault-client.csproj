@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>VaultOwnerFilter</RootNamespace>
+    <AssemblyName>Vault-client</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TarkovDir Condition="'$(TarkovDir)' == ''">$(SPT_PATH)</TarkovDir>
+    <ManagedDir>$(TarkovDir)EscapeFromTarkov_Data\Managed\</ManagedDir>
+    <BepInExDir>$(TarkovDir)BepInEx\core\</BepInExDir>
+    <SptPluginsDir>$(TarkovDir)BepInEx\plugins\spt\</SptPluginsDir>
+  </PropertyGroup>
+
+  <Target Name="ValidateTarkovDir" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(TarkovDir)' == ''" Text="Set TarkovDir (-p:TarkovDir=C:\Path\To\SPT\) or the SPT_PATH environment variable." />
+    <Error Condition="!Exists('$(ManagedDir)Assembly-CSharp.dll')" Text="Assembly-CSharp.dll was not found under TarkovDir: $(TarkovDir)" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="0Harmony" HintPath="$(BepInExDir)0Harmony.dll" />
+    <Reference Include="Assembly-CSharp" HintPath="$(ManagedDir)Assembly-CSharp.dll" />
+    <Reference Include="BepInEx" HintPath="$(BepInExDir)BepInEx.dll" />
+    <Reference Include="Comfort" HintPath="$(ManagedDir)Comfort.dll" />
+    <Reference Include="Newtonsoft.Json" HintPath="$(ManagedDir)Newtonsoft.Json.dll" />
+    <Reference Include="Sirenix.Serialization" HintPath="$(ManagedDir)Sirenix.Serialization.dll" />
+    <Reference Include="spt-common" HintPath="$(SptPluginsDir)spt-common.dll" />
+    <Reference Include="spt-reflection" HintPath="$(SptPluginsDir)spt-reflection.dll" />
+    <Reference Include="Unity.TextMeshPro" HintPath="$(ManagedDir)Unity.TextMeshPro.dll" />
+    <Reference Include="UnityEngine" HintPath="$(ManagedDir)UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(ManagedDir)UnityEngine.CoreModule.dll" />
+    <Reference Include="UnityEngine.TextRenderingModule" HintPath="$(ManagedDir)UnityEngine.TextRenderingModule.dll" />
+    <Reference Include="UnityEngine.UIModule" HintPath="$(ManagedDir)UnityEngine.UIModule.dll" />
+    <Reference Include="UnityEngine.UI" HintPath="$(ManagedDir)UnityEngine.UI.dll" />
+  </ItemGroup>
+</Project>
